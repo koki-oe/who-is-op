@@ -1,6 +1,9 @@
 {
   "name": "frourio-app-server",
   "version": "0.1.0",
+  "engines": {
+    "node": "14.x"
+  },
   "private": true,
   "scripts": {
     "dev": "npm run migrate:dev && run-p dev:*",
@@ -15,7 +18,8 @@
     "migrate:dev": "prisma migrate dev",
     "migrate:dev:createonly":"prisma migrate dev --create-only",
     "migrate:reset": "prisma migrate reset",
-    "start": "cross-env NODE_ENV=production node index.js"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "heroku-prebuild": "npm install --dev"
   },
   "dependencies": {
     "@prisma/client": "^2.21.2",

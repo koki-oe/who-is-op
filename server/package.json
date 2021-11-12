@@ -15,8 +15,7 @@
     "migrate:dev": "prisma migrate dev",
     "migrate:dev:createonly":"prisma migrate dev --create-only",
     "migrate:reset": "prisma migrate reset",
-    "start": "cross-env NODE_ENV=production node index.js",
-    "heroku-prebuild": "npm install --dev"
+    "start": "cross-env NODE_ENV=production node index.js"
   },
   "dependencies": {
     "@prisma/client": "^2.21.2",

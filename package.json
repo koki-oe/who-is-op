@@ -30,7 +30,7 @@
   "dependencies": {
     "@aspida/axios": "^1.7.1",
     "@aspida/swr": "^1.7.1",
-    "@prisma/client": "^2.21.2",
+    "@prisma/client": "^3.4.2",
     "axios": "^0.21.1",
     "class-validator": "^0.13.1",
     "frourio": "^0.25.1",

@@ -10,6 +10,8 @@ const API_BASE_PATH = process.env.API_BASE_PATH ?? ''
 const API_ORIGIN = process.env.API_ORIGIN ?? ''
 const API_UPLOAD_DIR = process.env.API_UPLOAD_DIR ?? ''
 
+const RIOT_API_KEY = process.env.RIOT_API_KEY ?? ''
+
 export {
   API_JWT_SECRET,
   API_USER_ID,
@@ -17,5 +19,6 @@ export {
   API_SERVER_PORT,
   API_BASE_PATH,
   API_ORIGIN,
-  API_UPLOAD_DIR
+  API_UPLOAD_DIR,
+  RIOT_API_KEY
 }

@@ -5,7 +5,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'prettier'
+    'prettier',
+    "plugin:tailwindcss/recommended"
   ],
   plugins: ['@typescript-eslint', 'react'],
   parser: '@typescript-eslint/parser',
@@ -25,6 +26,7 @@ module.exports = {
       jsx: true
     }
   },
+  ignorePatterns: ["*.config.js"],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off'

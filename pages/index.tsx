@@ -13,10 +13,13 @@ const Home = () => {
 
       <div className="text-gray-100 bg-gray-800">
         <div className="flex flex-col h-screen">
+          {/* 背景画像 */}
           <div
             className="fixed right-0 bottom-0 scale-50 xl:scale-100 translate-x-1/4 xl:translate-x-0 translate-y-1/4 xl:translate-y-0">
             <Image src="/teemo.png" width={601} height={575}/>
           </div>
+
+          {/* マストヘッド */}
           <div className="flex justify-end items-center w-full h-8 text-gray-100 bg-gray-800">
             <div className="px-2">
               <Link href="/">
@@ -38,6 +41,8 @@ const Home = () => {
               </p>
             </div>
           </div>
+
+          {/* 機能一覧 */}
           <div className="flex flex-col justify-center py-6 px-4 md:px-16 lg:px-8 bg-gray-800">
             <div className="pb-4 font-mono text-2xl">Features</div>
             <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 pl-4 xl:w-2/3 text-gray-800">

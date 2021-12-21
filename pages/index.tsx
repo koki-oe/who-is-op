@@ -37,11 +37,11 @@ const Home = () => {
           <div className="flex flex-col justify-center px-48 -mt-6 h-full">
             <div className="pb-4 font-mono text-2xl">Features</div>
             <div className="flex flex-row pl-4 space-x-6 w-full text-gray-800">
-              <ServiceCard bg_path={"/background_1.JPG"} title="Search Builds"
-                           href="/search_counters"
+              <ServiceCard bg_path={"/background_1.JPG"} title="Build like OTP"
+                           href="/build_like_otp"
                            description="テストテストテストテストテストテストテストテストテストテスト"/>
               <ServiceCard bg_path={"/background_2.JPG"} title="Search Counters"
-                           href="#"
+                           href="/search_counters"
                            description="テストテストテストテストテストテストテストテストテストテスト"/>
             </div>
           </div>

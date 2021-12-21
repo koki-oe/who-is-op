@@ -24,7 +24,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center h-4/5 bg-gray-100">
+          <div className="flex flex-none justify-center h-2/5 bg-gray-100">
             <div className="flex flex-col items-center self-center p-4 text-gray-800">
               <div className="font-mono text-5xl">Who is OP?</div>
               <p className="pt-1 font-serif text-xl">
@@ -38,7 +38,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col justify-center px-4 md:px-16 lg:px-8 my-6 h-full bg-gray-800">
+          <div className="flex flex-col justify-center py-6 px-4 md:px-16 lg:px-8 bg-gray-800">
             <div className="pb-4 font-mono text-2xl">Features</div>
             <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 pl-4 xl:w-2/3 text-gray-800">
               <ServiceCard bg_path={"/background_1.JPG"} title="Build like OTP"

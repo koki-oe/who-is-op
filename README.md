@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/teemo.png" width="420" alt="who-is-op" />
+    <img src="./public/teemo.png" width="380" alt="who-is-op" />
     <h1>
         Who is OP?
     </h1>

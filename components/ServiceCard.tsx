@@ -10,7 +10,6 @@ type Props = {
 }
 
 const ServiceCard = (props: Props) => {
-
   const handleClick = useCallback(() => {
     router.push(props.href)
   }, [props.href])

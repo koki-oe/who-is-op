@@ -18,7 +18,7 @@
 </div>
 
 ## About
-- [Web site](who-is-op.vercel.app)
+- [Web site](https://who-is-op.vercel.app)
 - [index.tsx](https://github.com/koki-oe/who-is-op/blob/main/pages/index.tsx)
 - [Server side APIs](https://github.com/koki-oe/who-is-op/tree/main/server/api)
 

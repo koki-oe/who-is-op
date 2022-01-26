@@ -1,8 +1,10 @@
 <div align="center">
-    <img src="./public/teemo.png" width="601" alt="who-is-op" />
-    <a href="https://www.npmjs.com/package/frourio">
-        <img src="https://img.shields.io/badge/frourio-0.25.1-orange" alt="frourio version" />
-    </a>
+    <img src="./public/teemo.png" width="480" alt="who-is-op" />
+    <p>
+        <a href="https://www.npmjs.com/package/frourio">
+            <img src="https://img.shields.io/badge/frourio-0.25.1-orange" alt="frourio version" />
+        </a>
+    </p>
     <p>
         "Who is OP?" supplies new perspective to all
         <a href="https://www.leagueoflegends.com/">

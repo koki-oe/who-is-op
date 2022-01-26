@@ -20,7 +20,7 @@
 ## About
 - [Web site](https://who-is-op.vercel.app)
 - [index.tsx](https://github.com/koki-oe/who-is-op/blob/main/pages/index.tsx)
-- [Server side APIs](https://github.com/koki-oe/who-is-op/tree/main/server/api)
+- [Server side APIs](https://github.com/koki-oe/who-is-op/tree/main/server/api/riotapi)
 
 ## Features
 - Easy to search how to build against counters like OTP.

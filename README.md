@@ -1,8 +1,8 @@
 <div align="center">
     <img src="./public/teemo.png" width="420" alt="who-is-op" />
-    <div style="font-size: xx-large;">
+    <h1>
         Who is OP?
-    </div>
+    </h1>
     <p>
         <a href="https://www.npmjs.com/package/frourio">
             <img src="https://img.shields.io/badge/frourio-0.25.1-orange" alt="frourio version" />

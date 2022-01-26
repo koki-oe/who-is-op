@@ -1,6 +1,5 @@
-<img src="./public/teemo.png" width="1280" alt="who-is-op" />
-
-<div style="text-align: center;">
+<div align="center">
+    <img src="./public/teemo.png" width="601" alt="who-is-op" />
     <a href="https://www.npmjs.com/package/frourio">
         <img src="https://img.shields.io/badge/frourio-0.25.1-orange" alt="frourio version" />
     </a>

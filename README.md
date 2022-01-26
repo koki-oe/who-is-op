@@ -1,30 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="./public/teemo.png" width="1280" alt="who-is-op" />
 
-## Getting Started
+<div style="text-align: center;">
+    <a href="https://www.npmjs.com/package/frourio">
+        <img src="https://img.shields.io/badge/frourio-0.25.1-orange" alt="frourio version" />
+    </a>
+    <p>
+        "Who is OP?" supplies new perspective to all
+        <a href="https://www.leagueoflegends.com/">
+            League of Legends
+        </a>
+        players.
+    </p>
+</div>
 
-First, run the development server:
+## About
+- [Web site](who-is-op.vercel.app)
+- [index.tsx](https://github.com/koki-oe/who-is-op/blob/main/pages/index.tsx)
+- [Server side APIs](https://github.com/koki-oe/who-is-op/tree/main/server/api)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Features
+- Easy to search how to build against counters like OTP.
+- Easy to find the weak points of your champion pool.
 
-Open [http://localhost:8000](http://localhost:8000) with your browser to see the result.
+## Author
+[Koki Oe](https://www.facebook.com/profile.php?id=100020356560557)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+"Who is OP?" is licensed under a [MIT License](./LICENSE)

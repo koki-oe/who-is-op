@@ -8,8 +8,244 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Task {
-  id    Int     @id @default(autoincrement())
-  label String
-  done  Boolean @default(false)
+model SummonerDTO {
+  accountId     String             @db.Char(56)
+  profileIconId Int
+  revisionDate  BigInt
+  name          String
+  id            String             @db.Char(63) @id
+  puuid         String             @db.Char(78)
+  summonerLevel BigInt
+  matches       MatchMetadataDTO[]
+}
+
+model MatchDTO {
+  id         Int              @id @default(autoincrement())
+  metadata   MatchMetadataDTO?
+  info       MatchInfoDTO?
+}
+
+model MatchMetadataDTO {
+  dataVersion  String
+  matchId      String     @id
+  participants SummonerDTO[]
+  matchDTO     MatchDTO   @relation(fields: [matchDTOId], references: [id])
+  matchDTOId   Int
+}
+
+model MatchInfoDTO {
+  id                 Int              @id @default(autoincrement())
+  gameCreation       BigInt
+  gameDuration       BigInt
+  gameEndTimestamp   BigInt
+  gameId             BigInt
+  gameMode           String
+  gameName           String
+  gameStartTimestamp BigInt
+  gameType           String
+  gameVersion        String
+  mapId              Int
+  participants       ParticipantDTO[]
+  platformId         String
+  queueId            Int
+  teams              TeamDTO?
+  tournamentCode     String
+  matchDTO           MatchDTO         @relation(fields: [matchDTOId], references: [id])
+  matchDTOId         Int
+}
+
+model ParticipantDTO {
+  id                             Int          @id @default(autoincrement())
+  assists                        Int
+  baronKills                     Int
+  bountyLevel                    Int
+  champExperience                Int
+  champLevel                     Int
+  championId                     Int
+  championName                   String
+  championTransform              Int
+  consumablesPurchased           Int
+  damageDealtToBuildings         Int
+  damageDealtToObjectives        Int
+  damageDealtToTurrets           Int
+  damageSelfMitigated            Int
+  deaths                         Int
+  detectorWardsPlaced            Int
+  doubleKills                    Int
+  dragonKills                    Int
+  firstBloodAssist               Boolean
+  firstBloodKill                 Boolean
+  firstTowerAssist               Boolean
+  firstTowerKill                 Boolean
+  gameEndedInEarlySurrender      Boolean
+  gameEndedInSurrender           Boolean
+  goldEarned                     Int
+  goldSpent                      Int
+  individualPosition             String
+  inhibitorKills                 Int
+  inhibitorTakedowns             Int
+  inhibitorsLost                 Int
+  item0                          Int
+  item1                          Int
+  item2                          Int
+  item3                          Int
+  item4                          Int
+  item5                          Int
+  item6                          Int
+  itemsPurchased                 Int
+  killingSprees                  Int
+  kills                          Int
+  lane                           String
+  largestCriticalStrike          Int
+  largestKillingSpree            Int
+  largestMultiKill               Int
+  longestTimeSpentLiving         Int
+  magicDamageDealt               Int
+  magicDamageDealtToChampions    Int
+  magicDamageTaken               Int
+  neutralMinionsKilled           Int
+  nexusKills                     Int
+  nexusTakedowns                 Int
+  nexusLost                      Int
+  objectivesStolen               Int
+  objectivesStolenAssists        Int
+  participantId                  Int
+  pentaKills                     Int
+  perks                          PerksDTO?
+  physicalDamageDealt            Int
+  physicalDamageDealtToChampions Int
+  physicalDamageTaken            Int
+  profileIcon                    Int
+  puuid                          String
+  quadraKills                    Int
+  riotIdName                     String
+  riotIdTagline                  String
+  role                           String
+  sightWardsBoughtInGame         Int
+  spell1Casts                    Int
+  spell2Casts                    Int
+  spell3Casts                    Int
+  spell4Casts                    Int
+  summoner1Casts                 Int
+  summoner1Id                    Int
+  summoner2Casts                 Int
+  summoner2Id                    Int
+  summonerId                     String
+  summonerLevel                  Int
+  summonerName                   String
+  teamEarlySurrendered           Boolean
+  teamId                         Int
+  teamPosition                   String
+  timeCCingOthers                Int
+  timePlayed                     Int
+  totalDamageDealt               Int
+  totalDamageDealtToChampions    Int
+  totalDamageShieldedOnTeammates Int
+  totalDamageTaken               Int
+  totalHeal                      Int
+  totalHealsOnTeammates          Int
+  totalMinionsKilled             Int
+  totalTimeCCDealt               Int
+  totalTimeSpentDead             Int
+  totalUnitsHealed               Int
+  tripleKills                    Int
+  trueDamageDealt                Int
+  trueDamageDealtToChampions     Int
+  trueDamageTaken                Int
+  turretKills                    Int
+  turretTakedowns                Int
+  turretsLost                    Int
+  unrealKills                    Int
+  visionScore                    Int
+  visionWardsBoughtInGame        Int
+  wardsKilled                    Int
+  wardsPlaced                    Int
+  win                            Boolean
+  matchInfoDTO                   MatchInfoDTO @relation(fields: [matchInfoDTOId], references: [id])
+  matchInfoDTOId                 Int
+}
+
+model PerksDTO {
+  id               Int            @id @default(autoincrement())
+  statPerks        PerkStatsDTO?
+  styles           PerkStyleDTO[]
+  participantDTO   ParticipantDTO @relation(fields: [participantDTOId], references: [id])
+  participantDTOId Int
+}
+
+model PerkStatsDTO {
+  id         Int      @id @default(autoincrement())
+  defense    Int
+  flex       Int
+  offense    Int
+  perksId    Int
+  perksDTO   PerksDTO @relation(fields: [perksDTOId], references: [id])
+  perksDTOId Int
+}
+
+model PerkStyleDTO {
+  id           Int                    @id @default(autoincrement())
+  description  String
+  selections   PerkStyleSelectionDTO?
+  style        Int
+  perksDTO     PerksDTO               @relation(fields: [perksDTOId], references: [id])
+  perksDTOId   Int
+}
+
+model PerkStyleSelectionDTO {
+  id             Int          @id @default(autoincrement())
+  perk           Int
+  var1           Int
+  var2           Int
+  var3           Int
+  perkStyleDTO   PerkStyleDTO @relation(fields: [perkStyleDTOId], references: [id])
+  perkStyleDTOId Int
+}
+
+model TeamDTO {
+  id             Int                @id @default(autoincrement())
+  bans           TeamBanDTO[]
+  objectives     TeamObjectivesDTO?
+  teamId         Int
+  win            Boolean
+  matchInfoDTO   MatchInfoDTO       @relation(fields: [matchInfoDTOId], references: [id])
+  matchInfoDTOId Int
+}
+
+model TeamBanDTO {
+  id         Int     @id @default(autoincrement())
+  championId Int
+  pickTurn   Int
+  teamDTO    TeamDTO @relation(fields: [teamDTOId], references: [id])
+  teamDTOId  Int
+}
+
+model TeamObjectivesDTO {
+  id         Int           @id @default(autoincrement())
+  baron      ObjectiveDTO? @relation(name: "BaronDTO")
+  champion   ObjectiveDTO? @relation(name: "ChampionDTO")
+  dragon     ObjectiveDTO? @relation(name: "DragonDTO")
+  inhibitor  ObjectiveDTO? @relation(name: "InhibitorDTO")
+  riftHerald ObjectiveDTO? @relation(name: "RiftHeraldDTO")
+  tower      ObjectiveDTO? @relation(name: "TowerDTO")
+  teamDTO    TeamDTO       @relation(fields: [teamDTOId], references: [id])
+  teamDTOId  Int
+}
+
+model ObjectiveDTO {
+  id              Int               @id @default(autoincrement())
+  first           Boolean
+  kills           Int
+  baronDTO        TeamObjectivesDTO @relation(name: "BaronDTO", fields: [baronDTOId], references: [id])
+  baronDTOId      Int
+  championDTO     TeamObjectivesDTO @relation(name: "ChampionDTO", fields: [championDTOId], references: [id])
+  championDTOId   Int
+  dragonDTO       TeamObjectivesDTO @relation(name: "DragonDTO", fields: [dragonDTOId], references: [id])
+  dragonDTOId     Int
+  inhibitorDTO    TeamObjectivesDTO @relation(name: "InhibitorDTO", fields: [inhibitorDTOId], references: [id])
+  inhibitorDTOId  Int
+  riftHeraldDTO   TeamObjectivesDTO @relation(name: "RiftHeraldDTO", fields: [riftHeraldDTOId], references: [id])
+  riftHeraldDTOId Int
+  towerDTO        TeamObjectivesDTO @relation(name: "TowerDTO", fields: [towerDTOId], references: [id])
+  towerDTOId      Int
 }

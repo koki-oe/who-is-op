@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <div className="w-full h-screen bg-gray-200">
       <Header/>
-      <main className="flex justify-center bg-gray-200">
+      <main className="relative mx-8 xl:mx-auto xl:w-7/12 bg-gray-200">
         {(champion && champion.image) && (
           <div className="flex flex-col">
             {/* チャンピオンヘッダー */}
@@ -66,15 +66,13 @@ const Home = () => {
             <p>※本機能は開発中です。以下テストデータを含みます。</p>
             {summoners.map(summoner => (
               <div key={summoner.name}>
-                <div className="flex flex-row my-4">
-                  <div>
-                    <Image
-                      src={`https://ddragon.leagueoflegends.com/cdn/9.9.1/img/profileicon/588.png`}
-                      alt={'test icon'} width={48} height={48}
-                      className="rounded-full"
-                    />
-                  </div>
-                  <div className="flex flex-row flex-grow justify-between px-2 mx-1 border-b border-gray-800">
+                <div className="flex my-4">
+                  <Image
+                    src={`https://ddragon.leagueoflegends.com/cdn/9.9.1/img/profileicon/588.png`}
+                    alt={'test icon'} width={48} height={48}
+                    className="rounded-full"
+                  />
+                  <div className="flex flex-grow justify-between px-2 mx-1 border-b border-gray-800">
                     <div>
                       <p className="text-lg">{summoner.name}</p>
                       <p className="font-mono text-sm">
@@ -88,11 +86,11 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="relative">
                   <p className="text-lg">Favorite Orders</p>
-                  <div className="flex flex-row gap-8 my-2">
+                  <div className="flex gap-8 my-2">
                     <div className="flex flex-col items-center">
-                      <div className="flex flex-row gap-1 items-center">
+                      <div className="flex gap-1 items-center">
                         <Image
                           src={`https://ddragon.leagueoflegends.com/cdn/9.9.1/img/spell/SummonerTeleport.png`}
                           alt={"flash"} width={40} height={40}/>
@@ -103,7 +101,7 @@ const Home = () => {
                       <p className="font-mono text-sm">85.71%</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <div className="flex flex-row gap-1 items-center">
+                      <div className="flex gap-1 items-center">
                         <Image
                           src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${champion.spells[0].image.full}`}
                           alt={champion.spells[0].name} width={40} height={40}/>

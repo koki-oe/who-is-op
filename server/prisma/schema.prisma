@@ -8,6 +8,36 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Team Shuffling
+model CustomTeam {
+  uuid         String           @id @default(uuid())
+  participants CustomSummoner[]
+}
+
+model CustomSummoner {
+  summonerName String
+  tier         Tier
+  rank         Int
+  order        Int        @default(0)
+  team         CustomTeam @relation(fields: [teamUUID], references: [uuid])
+  teamUUID     String
+
+  @@id([teamUUID, summonerName])
+}
+
+enum Tier {
+  IRON
+  BRONZE
+  SILVER
+  GOLD
+  PLATINUM
+  DIAMOND
+  MASTER
+  GRAND_MASTER
+  CHALLENGER
+}
+
+// RiotAPI
 model SummonerDTO {
   accountId     String             @db.Char(56)
   profileIconId Int

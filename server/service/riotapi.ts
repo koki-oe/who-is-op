@@ -49,6 +49,7 @@ class API {
     return rawChampion.data[briefSummary.id] as Champion
   }
 }
+export default API
 
 export type Champions = {
   type: string
@@ -171,5 +172,3 @@ type Passive = {
   description: string
   image: Image
 }
-
-export default API

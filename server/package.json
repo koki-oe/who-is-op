@@ -15,7 +15,6 @@
     "migrate:dev": "prisma migrate dev",
     "migrate:dev:createonly": "prisma migrate dev --create-only",
     "migrate:reset": "prisma migrate reset",
-    "migrate:dbpush": "prisma db push",
     "start": "cross-env NODE_ENV=production node index.js"
   },
   "dependencies": {
